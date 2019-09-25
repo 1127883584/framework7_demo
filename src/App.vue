@@ -11,9 +11,6 @@
 
     export default {
         name: 'app',
-        // components: {
-        //   HelloWorld
-        // }
         data() {
             return {
                 params: {
