@@ -1,8 +1,6 @@
 import Tabs from '@/views/Tabs.vue';
 import Home from '@/views/Home.vue';
 import MyApproval from '@/views/MyApproval.vue'
-// import About from '@/views/About.vue';
-// import Contact from '@/views/Contact.vue';
 
 const routes = [
     {
@@ -15,7 +13,7 @@ const routes = [
                 id: 'home',
             },
             {
-                path: '/my-approval',
+                path: '/my-approval/',
                 component: MyApproval,
                 id: 'my-approval'
             },

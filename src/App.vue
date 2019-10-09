@@ -1,9 +1,9 @@
 <template>
-  <f7-app :params="params">
-    <!-- Statusbar -->
-    <f7-statusbar></f7-statusbar>
-    <f7-view url="/tabs/" main :stackPages="true"></f7-view>
-  </f7-app>
+    <f7-app :params="params">
+        <!-- Statusbar -->
+        <f7-statusbar></f7-statusbar>
+        <f7-view url="/tabs/" main :stackPages="true"></f7-view>
+    </f7-app>
 </template>
 
 <script>
@@ -26,11 +26,15 @@
 
 <style>
     #app {
-        font-family: 'Avenir', Helvetica, Arial, sans-serif;
+        font-family: '微软雅黑';
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         text-align: center;
         color: #2c3e50;
         margin-top: 60px;
+    }
+
+    .navbar{
+        background: #4CD95E !important;
     }
 </style>
