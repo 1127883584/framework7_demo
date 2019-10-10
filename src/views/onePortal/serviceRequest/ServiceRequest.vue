@@ -1,48 +1,37 @@
 <template>
-    <!-- Tabs -->
-    <f7-page ptr infinite @ptr:refresh="refreshLoadMore" @infinite="infiniteLoadMore">
-        <div>
-            <f7-card class="to-do-card" v-for="(item, index) in items" :key="index">
-                <div slot="content">
-                    <f7-row>
-                        <f7-col><span class="team-name-span">B&A {{item}}</span></f7-col>
-                        <f7-col><f7-button  fill round small style="float: right;">FinCon Reviewing</f7-button></f7-col>
-                    </f7-row>
-                    <f7-row class="eapv-number-div"><span>EAPV-060718-113804-064</span></f7-row>
-                    <f7-row class="eapv-company-and-amount">
-                        <f7-col>
-                            <div class="company-div">
-                                <p class="company-label">Company</p>
-                                <p class="company-name">2201-OOCLL</p>
-                            </div>
-                        </f7-col>
-                        <f7-col>
-                            <div class="total-amount-div">
-                                <p class="total-amount-label">Total Amount</p>
-                                <p class="total-amount-number">CNY 18.00</p>
-                            </div>
-                        </f7-col>
-                    </f7-row>
-                    <f7-row>
-                        <div class="total-amount-div">
-                            <p class="message-label">Expense Nature or Payment Message</p>
-                            <p class="message-describe">sahi test</p>
-                        </div>
-                    </f7-row>
+    <div>
+        <f7-page :page-content="false" class="service-request-page">
+            <div class="toolbar tabbar toolbar-top">
+                <div class="toolbar-inner">
+                    <a href="#outstanding" class="tab-link tab-link-active">My Outstanding</a>
+                    <a href="#previous" class="tab-link">Previous</a>
                 </div>
-            </f7-card>
-        </div>
-    </f7-page>
+            </div>
+            <div class="tabs-swipeable-wrap">
+                <div class="tabs">
+                    <div id="outstanding" class="page-content tab tab-active">
+                        <Outstanding></Outstanding>
+                    </div>
+                    <div id="previous" class="page-content tab">
+                        <Previous></Previous>
+                    </div>
+                </div>
+            </div>
+        </f7-page>
+    </div>
 </template>
 
 <script>
+    import Outstanding from "./Outstanding";
+    import Previous from "./Previous";
     export default {
         data(){
-          return{
-              items: [1, 2, 3],
-              allowInfinite: true
-          }
+            return{
+                items: [1, 2, 3],
+                allowInfinite: true
+            }
         },
+        components:{Outstanding, Previous},
         methods: {
             refreshLoadMore(done) {
                 const self = this;
@@ -118,5 +107,20 @@
     }
     .message-describe{
         font-size: 20px;
+    }
+
+    .service-request-page .toolbar{
+        background: #009cc7;
+        border-top: 0;
+    }
+
+    .service-request-page .toolbar-inner .tab-link{
+        color: #95d0ed;
+        border-bottom: 3px solid #009cc7;
+    }
+
+    .service-request-page .toolbar-inner .tab-link.tab-link-active{
+        color: white;
+        border-bottom: 3px solid white;
     }
 </style>

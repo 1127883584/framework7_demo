@@ -2,7 +2,7 @@
     <f7-app :params="params">
         <!-- Statusbar -->
         <f7-statusbar></f7-statusbar>
-        <f7-view url="/tabs/" main :stackPages="true"></f7-view>
+        <f7-view url="/one-portal-tabs/" id="main-view" main></f7-view>
     </f7-app>
 </template>
 
@@ -35,6 +35,6 @@
     }
 
     .navbar{
-        background: #4CD95E !important;
+        background: #009cc7 !important;
     }
 </style>

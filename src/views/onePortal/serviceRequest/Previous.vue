@@ -1,47 +1,17 @@
 <template>
     <!-- Tabs -->
-    <f7-page ptr infinite @ptr:refresh="refreshLoadMore" @infinite="infiniteLoadMore">
-        <div>
-            <f7-card class="to-do-card" v-for="(item, index) in items" :key="index">
-                <div slot="content">
-                    <f7-row>
-                        <f7-col><span class="team-name-span">B&A {{item}}</span></f7-col>
-                        <f7-col><f7-button  fill round small style="float: right;">FinCon Reviewing</f7-button></f7-col>
-                    </f7-row>
-                    <f7-row class="eapv-number-div"><span>EAPV-060718-113804-064</span></f7-row>
-                    <f7-row class="eapv-company-and-amount">
-                        <f7-col>
-                            <div class="company-div">
-                                <p class="company-label">Company</p>
-                                <p class="company-name">2201-OOCLL</p>
-                            </div>
-                        </f7-col>
-                        <f7-col>
-                            <div class="total-amount-div">
-                                <p class="total-amount-label">Total Amount</p>
-                                <p class="total-amount-number">CNY 18.00</p>
-                            </div>
-                        </f7-col>
-                    </f7-row>
-                    <f7-row>
-                        <div class="total-amount-div">
-                            <p class="message-label">Expense Nature or Payment Message</p>
-                            <p class="message-describe">sahi test</p>
-                        </div>
-                    </f7-row>
-                </div>
-            </f7-card>
-        </div>
+    <f7-page ptr infinite @ptr:done="loadDone" @ptr:refresh="refreshLoadMore" @infinite="infiniteLoadMore">
+        asdasd
     </f7-page>
 </template>
 
 <script>
     export default {
         data(){
-          return{
-              items: [1, 2, 3],
-              allowInfinite: true
-          }
+            return{
+                items: [1, 2, 3],
+                allowInfinite: true
+            }
         },
         methods: {
             refreshLoadMore(done) {
@@ -49,7 +19,7 @@
                 setTimeout(() => {
                     self.items.push(self.items.length + 1);
 
-                    done();
+                    // done();
                 }, 1000);
             },
             infiniteLoadMore(done) {
@@ -72,6 +42,9 @@
 
                     self.allowInfinite = true;
                 }, 1000);
+            },
+            loadDone(){
+                console.log('adasd')
             }
         }
     }
